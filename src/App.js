@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from "react";
+import ReactDOM from "react-dom"
 import './App.css';
+
+function TodoTask({task}){
+  return <li>{task}</li>
+  
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Mobile Operating Systems</h2>
+      <ul>
+      {
+        ["Android","Blackberry","iPhone","Windows Phone"].map((task)=>{
+          return <TodoTask task={task}/>
+        })
+        }
+      </ul>
+      <h2>Mobile Manufactures</h2>
+      <ul>{
+        ["Samsung","HTC","Micromax","Apple"].map((task)=>{
+          return <TodoTask task={task}/>
+        })
+        }
+       
+      </ul>
+      
     </div>
   );
 }
 
-export default App;
+export  {App};
